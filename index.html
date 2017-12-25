@@ -1,0 +1,24 @@
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <title>はじめてのえむばーす</title>
+  </head>
+  <script type="text/javascript" src="ncmb.min.js" charset="utf-8"></script>
+  <script>
+    //mobile backendアプリとの連携
+    var ncmb = new NCMB("10f68b8358f4b798c1a977fbef08e18e5033cb8b0dad8bab9ec9aebe3c4e3829","e6a6977281b0b95ee505b9ff34826cee86e5077cbdbd1e97837817a889de7866");
+    
+    //クラスのTestClassを作成
+    var TestClass = ncmb.DataStore("TestClass");
+    //データストアへの登録
+    var testClass = new TestClass();
+    testClass.set("message", "Hello, NCMB!");
+    testClass.save()
+      .then(function(){
+        //保存に成功した場合の処理
+      })
+      .catch(function(err){
+        //保存に失敗した場合の処理
+      });
+  </script>
+</head>
